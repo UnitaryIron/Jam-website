@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icon/site.webmanifest" />
+    <title>Jam - A Simple, Expressive Language</title>
+    <style>
+      :root {
+        --primary: #6e48aa; /* Jam-like purple */
+        --primary-dark: #4b2d8a;
+        --primary-light: #8e6ad6;
+        --secondary: #ff9a56; /* Accent orange */
+        --white: #f8f9fa;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--primary-light)
+        );
+        color: var(--white);
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .hero p {
+        font-size: 1.75rem;
+        max-width: 600px;
+        margin: 1rem auto 2rem;
+        opacity: 0.9;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .cta-button {
+        background: var(--secondary);
+        color: #222;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .hero p {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <h1>Jam</h1>
+      <p>
+        A simple, expressive programming language designed for learning and
+        creativity.
+      </p>
+      <a href="docs.html" class="cta-button">Get Started!</a>
+    </section>
+  </body>
+</html>
