@@ -364,52 +364,54 @@ call greet "Jam"  # Output: Hello, Jam</code></pre>
         </section>
       </main>
     </div>
-   <section class="about-section">
+  <section id="about-creator" class="about-section">
+  <h2>About the Creator</h2>
+  
   <div class="creator-card">
     <div class="creator-image">
     </div>
-
+    
     <div class="creator-bio">
-      <h3>Hi, I'm Emmanuel Lijo!</h3>
+      <h3>Hi, I'm Emmanuel!</h3>
       <p>I created Jam when I was 14 years old because I wanted to make programming more accessible to beginners.</p>
       
       <div class="bio-facts">
         <div class="fact">
-          <span class="fact-icon">→</span>
+          <span class="fact-icon"></span>
           <span>Self-taught programmer since age 12</span>
         </div>
         <div class="fact">
-          <span class="fact-icon">→</span>
+          <span class="fact-icon"></span>
           <span>Built Jam completely from scratch</span>
         </div>
       </div>
       
-      <div class="creator-links">
-        <a href="https://github.com/UnitaryIron" target="_blank" class="social-link">
-          <span class="social-icon"></span> GitHub
-        </a>
-        <a href="mailto:emmanuellijo670@gmail.com" class="social-link">
-          <span class="social-icon"></span> Email
-        </a>
+     <div class="creator-links">
+  <a href="https://github.com/UnitaryIron" target="_blank" class="social-link">
+    <span class="social-icon"></span> GitHub
+  </a>
+  <a href="mailto:emmanuellijo670@gmail.com" class="social-link">
+    <span class="social-icon"></span> Email
+  </a>
+</div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+  /* Add these styles to your existing CSS */
   .about-section {
-    padding: 3rem 1rem;
+    padding: 3rem 0;
     background: rgba(110, 72, 170, 0.1);
     border-radius: 16px;
-    margin: 2rem auto;
-    max-width: 1200px;
+    margin: 2rem 0;
   }
 
   .creator-card {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 2rem;
+    align-items: center;
     max-width: 900px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.05);
@@ -417,75 +419,50 @@ call greet "Jam"  # Output: Hello, Jam</code></pre>
     border-radius: 12px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
   }
 
-  .creator-image {
-    position: relative;
-    width: 120px;
-    height: 120px;
-  }
-
-  .creator-avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255, 154, 86, 0.3);
-  }
-
-  .avatar-placeholder {
-    display: none; /* Hidden if image loads */
+  .creator-image .avatar-placeholder {
     font-size: 4rem;
     background: var(--primary);
     color: var(--secondary);
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
   .creator-bio {
-    width: 100%;
+    flex: 1;
   }
 
   .creator-bio h3 {
-    color: var(--black);
-    margin: 0 0 1rem 0;
+    color: var(--secondary);
+    margin-top: 0;
     font-size: 1.8rem;
-  }
-
-  .creator-bio p {
-    margin: 0 0 1.5rem 0;
-    line-height: 1.6;
   }
 
   .bio-facts {
     margin: 1.5rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
   }
 
   .fact {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
   }
 
   .fact-icon {
-    color: var(--primary);
     font-size: 1.2rem;
   }
 
   .creator-links {
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    margin-top: 1.5rem;
     flex-wrap: wrap;
   }
 
@@ -493,9 +470,9 @@ call greet "Jam"  # Output: Hello, Jam</code></pre>
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.6rem 1.2rem;
+    padding: 0.6rem 1rem;
     background: rgba(255, 154, 86, 0.1);
-    color: var(--primary);
+    color: var(--secondary);
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -511,16 +488,18 @@ call greet "Jam"  # Output: Hello, Jam</code></pre>
     font-size: 1.1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     .creator-card {
-      flex-direction: row;
-      text-align: left;
-    }
-    .bio-facts {
-      align-items: flex-start;
-    }
-    .creator-bio p {
+      flex-direction: column;
       text-align: center;
+    }
+    
+    .bio-facts {
+      justify-content: center;
+    }
+    
+    .creator-links {
+      justify-content: center;
     }
   }
 </style>
