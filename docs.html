@@ -141,6 +141,7 @@
       <nav>
         <ul>
           <li><a href="#getting-started">Getting Started</a></li>
+          <li><a href="#why-jam">Why Jam?</a></li>
           <li><a href="#variables">Variables</a></li>
           <li><a href="#math">Math Operations</a></li>
           <li><a href="#lists">Lists</a></li>
@@ -229,7 +230,69 @@
             }
           }
         </style>
+        <section id="why-jam">
+  <h2>Why Jam is Different</h2>
+  
+  <div class="feature-card">
+    <h3>🧠 Natural Language Syntax</h3>
+    <p>Jam reads almost like English, making it perfect for beginners:</p>
+    <div class="code-example">
+      <pre><code>add 5 and 3 into total
+print "Hello world"
+if score is greater than 10 { ... }</code></pre>
+    </div>
+  </div>
 
+  <div class="feature-card">
+    <h3>🚀 Instant Feedback</h3>
+    <p>No complicated setup - just type code and see results immediately in our built-in IDE.</p>
+  </div>
+
+  <div class="feature-card">
+    <h3>🎯 Designed for Learning</h3>
+    <p>Unlike other languages, Jam:</p>
+    <ul>
+      <li>Has no hidden complexity</li>
+      <li>Provides clear error messages</li>
+      <li>Lets you focus on concepts rather than syntax</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  /* Add these styles to your existing CSS */
+  #why-jam {
+    padding: 2rem 0;
+  }
+
+  .feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--secondary);
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .feature-card h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+
+  .code-example {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+  }
+</style>
         <section id="variables">
           <h2>Variables</h2>
           <p>Declare variables with <code>let</code>:</p>
