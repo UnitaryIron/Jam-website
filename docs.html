@@ -147,6 +147,7 @@
           <li><a href="#lists">Lists</a></li>
           <li><a href="#conditionals">Conditionals</a></li>
           <li><a href="#functions">Functions</a></li>
+          <li><a href="#about-creator">About the Creator</a></li>
         </ul>
       </nav>
 
@@ -363,7 +364,145 @@ call greet "Jam"  # Output: Hello, Jam</code></pre>
         </section>
       </main>
     </div>
+    <section id="about-creator" class="about-section">
+  <h2>About the Creator</h2>
+  
+  <div class="creator-card">
+    <div class="creator-image">
+      <!-- Replace with your image or an avatar -->
+      <div class="avatar-placeholder"></div>
+    </div>
+    
+    <div class="creator-bio">
+      <h3>Hi, I'm Emmanuel Lijo!</h3>
+      <p>I created Jam when I was 14 years old because I wanted to make programming more accessible to beginners.</p>
+      
+      <div class="bio-facts">
+        <div class="fact">
+          <span class="fact-icon"></span>
+          <span>Self-taught programmer since age 12</span>
+        </div>
+        <div class="fact">
+          <span class="fact-icon"></span>
+          <span>Built Jam completely from scratch</span>
+        </div>
+      
+      <div class="creator-links">
+        <a href="github.com/UnitaryIron" target="_blank" class="social-link">
+          <span class="social-icon"></span> GitHub
+        </a>
+        <a href="emmanuellijo670@gmail.com" class="social-link">
+          <span class="social-icon"></span> Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<style>
+  /* Add these styles to your existing CSS */
+  .about-section {
+    padding: 3rem 0;
+    background: rgba(110, 72, 170, 0.1);
+    border-radius: 16px;
+    margin: 2rem 0;
+  }
+
+  .creator-card {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .creator-image .avatar-placeholder {
+    font-size: 4rem;
+    background: var(--primary);
+    color: var(--secondary);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .creator-bio {
+    flex: 1;
+  }
+
+  .creator-bio h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+
+  .bio-facts {
+    margin: 1.5rem 0;
+  }
+
+  .fact {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .fact-icon {
+    font-size: 1.2rem;
+  }
+
+  .creator-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem;
+    background: rgba(255, 154, 86, 0.1);
+    color: var(--secondary);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 154, 86, 0.3);
+  }
+
+  .social-link:hover {
+    background: rgba(255, 154, 86, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .social-icon {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 768px) {
+    .creator-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .bio-facts {
+      justify-content: center;
+    }
+    
+    .creator-links {
+      justify-content: center;
+    }
+  }
+</style>
     <script>
       // Copy functionality
       function copyCode(button) {
