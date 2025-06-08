@@ -147,6 +147,7 @@
           <li><a href="#lists">Lists</a></li>
           <li><a href="#conditionals">Conditionals</a></li>
           <li><a href="#functions">Functions</a></li>
+          <li><a href="#whats-next">What's Next</a></li>
           <li><a href="#about-creator">About the Creator</a></li>
         </ul>
       </nav>
@@ -364,6 +365,93 @@ call greet "Jam"  # Output: Hello, Jam</code></pre>
         </section>
       </main>
     </div>
+  <section id="whats-next" class="roadmap-section">
+  <h2>What's Next for Jam?</h2>
+  
+  <div class="roadmap-card">
+    <div class="roadmap-icon"></div>
+    <h3>Jam → JavaScript Compiler(Note that this is sitll under development)</h3>
+    <p>Turn Jam code into efficient JavaScript to power real websites:</p>
+      </div>
+    </div>
+    
+    <ul class="feature-list">
+      <li><span class="check">✓</span> Browser-ready JS without installs</li>
+      <li><span class="check">✓</span> Support DOM manipulation: <code>change #title to "New Text"</code></li>
+      <li><span class="check">✓</span> Debugger with Jam-to-JS mapping</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .roadmap-section {
+    padding: 2rem 0;
+    background: rgba(110, 72, 170, 0.05);
+    border-top: 1px solid rgba(110, 72, 170, 0.2);
+    margin-top: 3rem;
+  }
+  
+  .roadmap-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--secondary);
+  }
+  
+  .roadmap-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+  }
+  
+  .code-comparison {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    align-items: center;
+  }
+  
+  .jam-side, .js-side {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .arrow {
+    font-size: 2rem;
+    color: var(--primary);
+  }
+  
+  .feature-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feature-list li {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .check {
+    color: var(--secondary);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .code-comparison {
+      flex-direction: column;
+    }
+    .arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>
   <section id="about-creator" class="about-section">
   <h2>About the Creator</h2>
   
