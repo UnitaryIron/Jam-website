@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jam – Features</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #0d0f1a;
+        color: #f0f4ff;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      nav {
+        background-color: #11172a;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #1c2238;
+      }
+
+      nav h1 {
+        font-size: 1.3rem;
+        color: #60a5fa;
+        margin: 0;
+      }
+
+      nav a {
+        color: #cbd5ff;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-size: 1rem;
+      }
+
+      nav a:hover {
+        color: #60a5fa;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 2rem auto;
+        padding: 0 1.5rem;
+      }
+
+      h2 {
+        color: #60a5fa;
+        margin-top: 2rem;
+        border-bottom: 1px solid #223;
+        padding-bottom: 0.4rem;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        line-height: 1.8;
+      }
+
+      code {
+        background-color: #1c243b;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        color: #93c5fd;
+      }
+
+      pre {
+        background-color: #1a2238;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        margin-top: 1rem;
+        color: #dbeafe;
+      }
+
+      footer {
+        text-align: center;
+        margin: 3rem 0 2rem;
+        font-size: 0.95rem;
+        color: #667aa6;
+      }
+    </style>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icon/site.webmanifest" />
+  </head>
+  <body>
+    <nav>
+      <h1>Jam</h1>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About the Creator</a>
+        <a href="community.html">Feedback</a>
+        <a href="https://jam-frontend-alpha.vercel.app/" target="_blank">IDE</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Jam Language Features</h1>
+      <p>A simple, expressive language designed for beginner programmers.</p>
+
+      <h2>Core Features</h2>
+      <ul>
+        <li><strong>Variables:</strong> <code>set x = 5</code></li>
+        <li><strong>Print:</strong> <code>print "hello"</code></li>
+        <li><strong>Types:</strong> numbers, strings, booleans, lists</li>
+      </ul>
+
+      <h2>Control Flow</h2>
+      <ul>
+        <li>
+          <code>if</code>, <code>otherwise</code> (else-if), <code>else</code>
+        </li>
+        <li><code>repeat 5 { ... }</code></li>
+      </ul>
+
+      <h2>Math & Strings</h2>
+      <ul>
+        <li>
+          <code>add A and B into result</code>,
+          <code>multiply A and B into result</code>
+        </li>
+        <li><code>square of x</code>, <code>sqrt of x</code></li>
+        <li><code>uppercase "hello"</code>, <code>reverse "abc"</code></li>
+      </ul>
+
+      <h2>Random & Choice</h2>
+      <ul>
+        <li><code>random between 1 and 10</code></li>
+        <li><code>choose from "a", "b", "c" into x</code></li>
+      </ul>
+
+      <h2>Interaction</h2>
+      <ul>
+        <li><code>say "Hi there"</code> (browser-only)</li>
+        <li><code>ask "What's your name?"</code> (not supported in browser)</li>
+      </ul>
+
+      <h2>Timer</h2>
+      <ul>
+        <li><code>timer start</code>, <code>timer stop</code></li>
+        <li><code>wait 5</code> (skipped in browser)</li>
+      </ul>
+
+      <h2>Functions</h2>
+      <ul>
+        <li><code>function greet() { ... }</code></li>
+        <li><code>function anonymous (n) { return n * 2 }</code></li>
+        <li>
+          Use <code>call greet</code> and access return with
+          <code>last_return</code>
+        </li>
+      </ul>
+
+      <h2>Functional Utils</h2>
+      <ul>
+        <li><code>map (n) => n * 2 over [1, 2, 3]</code></li>
+      </ul>
+
+      <h2>Example</h2>
+      <pre>
+set x = 5
+if x > 3 {
+  print "Greater"
+} else {
+  print "Less"
+}
+
+function double(n) {
+  return n * 2
+}
+
+set nums = [1, 2, 3]
+set doubled = map (n) => n * 2 over nums
+print doubled
+    </pre
+      >
+    </div>
+
+    <footer>
+      <p>Made by Emmanuel</p>
+    </footer>
+  </body>
+</html>

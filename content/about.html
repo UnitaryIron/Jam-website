@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About the Creator – Jam</title>
+    <style>
+      :root {
+        --bg: #0e0e0f;
+        --fg: #f4f4f4;
+        --muted: #999;
+        --accent: #3a82f7;
+        --dark-gray: #1b1b1d;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+      }
+
+      header {
+        padding: 20px 40px;
+        background-color: #000;
+        border-bottom: 1px solid #222;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .nav-items {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-items a {
+        color: #ccc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-items a:hover {
+        color: var(--accent);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+      }
+
+      .subheading {
+        color: var(--muted);
+        margin-bottom: 40px;
+      }
+
+      .about-text {
+        line-height: 1.7;
+        font-size: 1.1rem;
+        color: #ddd;
+      }
+
+      .highlight {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .contact {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #333;
+        color: #bbb;
+        font-size: 1rem;
+      }
+
+      .contact a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav-items {
+          margin-top: 10px;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/icon/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Jam</div>
+      <div class="nav-items">
+        <a href="index.html">Home</a>
+        <a href="docs.html">Docs</a>
+        <a href="community.html">Feedback</a>
+        <a href="features.html">Features</a>
+        <a href="https://jam-frontend-alpha.vercel.app/" target="_blank">IDE</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>About the Creator</h1>
+      <p class="subheading">Who built Jam and why?</p>
+      <div class="about-text">
+        <p>
+          <span class="highlight">Jam</span> was created by a 14-year-old
+          developer from Kerala, India, with a passion for making programming
+          more intuitive, expressive, and enjoyable for beginners — especially
+          younger students.
+        </p>
+        <p>
+          Instead of learning through abstract syntax and intimidating
+          environments, the idea behind Jam was to build a friendly,
+          Python-style language that teaches real-world programming concepts
+          while remaining readable and fun.
+        </p>
+        <p>
+          The creator is also interested in compilers, entrepreneurship, and
+          design — and has built Jam from scratch, including the syntax parser,
+          compiler (Jam → JS), docs, IDE, and the website you’re seeing right
+          now.
+        </p>
+        <p>
+          Jam is still growing — and there's more to come. The goal is to make
+          it easier for kids and teens around the world to get into software
+          development without being overwhelmed.
+        </p>
+      </div>
+
+      <div class="contact">
+        <p><strong>Created by:</strong> Emmanuel Lijo</p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/unitaryiron" target="_blank"
+            >github.com/UnitaryIron</a
+          >
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:emmanuellijo670@gmail.com"
+            >emmanuellijo100@gmail.com</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
