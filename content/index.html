@@ -43,11 +43,23 @@ content/Jam-logo-modified.png" />
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <title>
-      Jam - A Friendly Programming Language | Beginner-Friendly, Expressive,
-      JavaScript Compatible
-    </title>
-    <link rel="icon" type="image/png" href="content/Jam-logo-modified.png">
+    <title>Jam | Build Programs Without the Struggle</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Jam is a beginner-friendly programming language designed to reduce complexity and help you think clearly while coding."
+    />
+    <link rel="icon" type="image/x-icon" href="content/Jam.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
     <style>
       * {
         margin: 0;
@@ -56,1100 +68,716 @@ content/Jam-logo-modified.png" />
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        overflow-x: hidden;
-        background: #0f0f1a;
-        color: #e0e0e0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+          Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: #fff;
       }
 
-      .hero {
-        position: relative;
-        min-height: 100vh;
-        background: linear-gradient(
-          135deg,
-          #1a1a2e 0%,
-          #2d1b4e 50%,
-          #1a1a2e 100%
-        );
-        display: flex;
-        flex-direction: column;
+      :root {
+        --jam-primary: #6d28d9;
+        --jam-primary-dark: #4c1d95;
+        --jam-accent: #f97316;
+        --jam-bg: #ffffff;
+        --jam-text: #1f2937;
+        --jam-muted: #6b7280;
       }
 
-      nav {
+      .nav-bar {
+        background: var(--jam-primary-dark);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 2rem 5rem;
-        position: relative;
-        z-index: 10;
+        flex-wrap: wrap;
       }
 
-      .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .logo-circle {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
+      .logo a {
+        color: white;
+        font-size: 1.5rem;
         font-weight: bold;
-        color: #ff8c42;
-        box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+        text-decoration: none;
       }
 
-      .logo-text {
-        font-size: 1.8rem;
-        font-weight: 600;
-        letter-spacing: 0.1rem;
-        color: #fff;
+      .logo span {
+        color: var(--jam-accent);
       }
 
       .nav-links {
         display: flex;
-        gap: 3rem;
-        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
       }
 
       .nav-links a {
+        color: white;
         text-decoration: none;
-        color: #e0e0e0;
-        font-size: 1rem;
         transition: color 0.3s;
-        position: relative;
       }
 
       .nav-links a:hover {
-        color: #ff8c42;
+        color: var(--jam-accent);
       }
 
-      .try-ide-btn {
-        background: #ff6b35 100%;
-        color: #fff;
-        padding: 0.75rem 2rem;
-        border-radius: 8px;
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--jam-primary-dark) 0%,
+          var(--jam-primary) 100%
+        );
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
       }
 
       .hero-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 4rem 2rem;
-        position: relative;
-        z-index: 5;
-      }
-
-      .badges {
-        display: flex;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .badge {
-        background: rgba(124, 58, 237, 0.2);
-        border: 1px solid rgba(124, 58, 237, 0.4);
-        padding: 0.5rem 1.5rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        color: #e0e0e0;
-      }
-
-      h1 {
-        font-size: 4.5rem;
-        font-weight: 700;
-        letter-spacing: 0.05rem;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        color: #fff;
-        background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .highlight {
-        background: linear-gradient(135deg, #ff8c42 0%, #7c3aed 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .tagline {
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: #b0b0b0;
         max-width: 800px;
-        margin-bottom: 3rem;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+        animation: fadeInUp 0.8s ease 0.1s both;
       }
 
       .cta-buttons {
         display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
+        gap: 1rem;
         justify-content: center;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.8s ease 0.2s both;
       }
 
       .btn {
-        padding: 1rem 2.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: 500;
-        transition: all 0.3s;
         display: inline-block;
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
       }
 
       .btn-primary {
-        background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
-        color: #fff;
-        box-shadow: 0 4px 20px rgba(255, 140, 66, 0.4);
+        background: var(--jam-accent);
+        color: var(--jam-bg);
       }
 
       .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 30px rgba(255, 140, 66, 0.6);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       }
 
       .btn-secondary {
-        background: rgba(124, 58, 237, 0.2);
-        border: 2px solid #7c3aed;
-        color: #fff;
+        background: transparent;
+        color: white;
+        border: 2px solid white;
       }
 
       .btn-secondary:hover {
-        background: rgba(124, 58, 237, 0.4);
-        transform: translateY(-3px);
+        background: white;
+        color: var(--jam-primary-dark);
       }
 
-      .code-preview {
-        background: rgba(15, 15, 26, 0.8);
-        border: 1px solid rgba(124, 58, 237, 0.3);
-        border-radius: 12px;
-        padding: 2rem;
-        max-width: 600px;
-        margin: 3rem auto 0;
-        box-shadow: 0 10px 40px rgba(124, 58, 237, 0.2);
-        backdrop-filter: blur(10px);
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
       }
 
-      .code-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-      }
-
-      .code-title {
-        color: #ff8c42;
-        font-weight: 600;
-      }
-
-      .code-lang {
-        color: #7c3aed;
-        font-size: 0.9rem;
-      }
-
-      .code-content {
-        text-align: left;
-        font-family: "Courier New", monospace;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      .code-line {
-        display: block;
-        color: #e0e0e0;
-      }
-
-      .code-comment {
-        color: #6b7280;
-      }
-
-      .code-keyword {
-        color: #7c3aed;
-      }
-
-      .code-string {
-        color: #ff8c42;
-      }
-
-      .code-function {
-        color: #10b981;
-      }
-
-      .stats-section {
-        display: flex;
-        justify-content: center;
-        gap: 4rem;
-        padding: 3rem 2rem;
-        background: rgba(15, 15, 26, 0.5);
-        border-top: 1px solid rgba(124, 58, 237, 0.2);
-        flex-wrap: wrap;
-      }
-
-      .stat {
+      .section-header {
         text-align: center;
+        margin-bottom: 3rem;
       }
 
-      .stat-number {
+      .section-header h2 {
         font-size: 2.5rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #ff8c42 0%, #7c3aed 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 0.5rem;
-      }
-
-      .stat-label {
-        color: #b0b0b0;
-        font-size: 1rem;
-      }
-
-      .features-section {
-        padding: 6rem 5rem;
-        background: #0f0f1a;
-      }
-
-      .section-title {
-        text-align: center;
-        font-size: 3rem;
+        color: var(--jam-primary-dark);
         margin-bottom: 1rem;
-        color: #fff;
       }
 
-      .section-subtitle {
-        text-align: center;
-        font-size: 1.2rem;
-        color: #b0b0b0;
-        margin-bottom: 4rem;
+      .section-header p {
+        font-size: 1.1rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .code-block {
+        background: #f9fafb;
+        border-left: 4px solid var(--jam-accent);
+        padding: 1.5rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+      }
+
+      pre {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 1.5rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-family: "Monaco", "Menlo", "Courier New", monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      code {
+        font-family: "Monaco", "Menlo", "Courier New", monospace;
       }
 
       .features-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
+        gap: 2rem;
+        margin-top: 2rem;
       }
 
       .feature-card {
-        background: rgba(26, 26, 46, 0.8);
-        border: 1px solid rgba(124, 58, 237, 0.2);
-        border-radius: 12px;
+        background: white;
         padding: 2rem;
-        transition: all 0.3s;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        text-align: center;
       }
 
       .feature-card:hover {
         transform: translateY(-5px);
-        border-color: rgba(255, 140, 66, 0.5);
-        box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       }
 
       .feature-icon {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-bottom: 1rem;
       }
 
-      .feature-title {
-        font-size: 1.4rem;
-        color: #fff;
+      .feature-card h3 {
+        color: var(--jam-primary-dark);
         margin-bottom: 1rem;
       }
 
-      .feature-desc {
-        color: #b0b0b0;
-        line-height: 1.6;
-      }
-
-      .playground-section {
-        padding: 6rem 5rem;
-        background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
-      }
-
-      .playground-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        background: rgba(15, 15, 26, 0.9);
-        border: 1px solid rgba(124, 58, 237, 0.3);
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-      }
-
-      .playground-header {
-        background: rgba(26, 26, 46, 0.95);
-        padding: 1.5rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid rgba(124, 58, 237, 0.3);
-      }
-
-      .playground-title {
-        color: #fff;
-        font-size: 1.2rem;
-      }
-
-      .playground-buttons {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .playground-btn {
-        padding: 0.5rem 1.5rem;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 500;
-        transition: all 0.3s;
-      }
-
-      .reset-btn {
-        background: rgba(124, 58, 237, 0.2);
-        color: #e0e0e0;
-      }
-
-      .reset-btn:hover {
-        background: rgba(124, 58, 237, 0.4);
-      }
-
-      .run-btn {
-        background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
-        color: #fff;
-      }
-
-      .run-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(255, 140, 66, 0.5);
-      }
-
-      .playground-content {
+      .two-column {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        min-height: 400px;
-      }
-
-      .editor-pane {
-        padding: 2rem;
-        background: rgba(15, 15, 26, 0.5);
-        border-right: 1px solid rgba(124, 58, 237, 0.2);
-      }
-
-      .output-pane {
-        padding: 2rem;
-        background: rgba(10, 10, 15, 0.5);
-      }
-
-      .pane-label {
-        color: #7c3aed;
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-      }
-
-      .editor-content {
-        font-family: "Courier New", monospace;
-        color: #e0e0e0;
-        line-height: 1.8;
-        font-size: 0.95rem;
-      }
-
-      .output-content {
-        font-family: "Courier New", monospace;
-        color: #10b981;
-        font-size: 0.95rem;
-      }
-
-      .comparison-section {
-        padding: 6rem 5rem;
-        background: #0f0f1a;
-      }
-
-      .comparison-table {
-        max-width: 800px;
-        margin: 3rem auto;
-        background: rgba(26, 26, 46, 0.8);
-        border: 1px solid rgba(124, 58, 237, 0.2);
-        border-radius: 12px;
-        overflow: hidden;
-      }
-
-      .table-row {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        padding: 1.5rem 2rem;
-        border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-      }
-
-      .table-row:last-child {
-        border-bottom: none;
-      }
-
-      .table-header {
-        background: rgba(124, 58, 237, 0.2);
-        font-weight: 600;
-        color: #ff8c42;
-      }
-
-      .table-cell {
-        color: #e0e0e0;
-      }
-
-      .checkmark {
-        color: #10b981;
-        font-size: 1.5rem;
-      }
-
-      .crossmark {
-        color: #ef4444;
-        font-size: 1.5rem;
-      }
-
-      .quickstart-section {
-        padding: 6rem 5rem;
-        background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
-      }
-
-      .steps-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 3rem auto;
-      }
-
-      .step-card {
-        background: rgba(15, 15, 26, 0.8);
-        border: 1px solid rgba(124, 58, 237, 0.3);
-        border-radius: 12px;
-        padding: 2rem;
-        position: relative;
-      }
-
-      .step-number {
-        position: absolute;
-        top: -15px;
-        left: 20px;
-        background: linear-gradient(135deg, #ff8c42 0%, #7c3aed 100%);
-        color: #fff;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
+        gap: 3rem;
         align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.2rem;
       }
 
-      .step-title {
-        color: #fff;
-        font-size: 1.2rem;
+      @media (max-width: 768px) {
+        .two-column {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      .editor-section {
+        background: #f3f4f6;
+        border-radius: 8px;
+        padding: 2rem;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        font-family: "Monaco", "Menlo", monospace;
+        font-size: 0.9rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #2d2d2d;
+        color: #f8f8f2;
         margin-bottom: 1rem;
+      }
+
+      .output {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 1rem;
+        border-radius: 4px;
+        font-family: monospace;
         margin-top: 1rem;
       }
 
-      .step-content {
-        background: rgba(10, 10, 15, 0.5);
-        padding: 1rem;
-        border-radius: 8px;
-        font-family: "Courier New", monospace;
-        color: #10b981;
-        font-size: 0.9rem;
-        line-height: 1.6;
+      .footer {
+        background: var(--jam-primary-dark);
+        color: white;
+        text-align: center;
+        padding: 3rem 2rem;
       }
 
-      footer {
-        background: #0a0a10;
-        padding: 4rem 5rem 2rem;
-        border-top: 1px solid rgba(124, 58, 237, 0.2);
-      }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 3rem;
-      }
-
-      .footer-brand {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .footer-logo {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .footer-logo-circle {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #ff8c42;
-      }
-
-      .footer-desc {
-        color: #6b7280;
-        line-height: 1.6;
-      }
-
-      .footer-section h3 {
-        color: #fff;
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      .footer-links a {
-        color: #b0b0b0;
+      .footer a {
+        color: var(--jam-accent);
         text-decoration: none;
+      }
+
+      .social-links {
+        margin-bottom: 1rem;
+      }
+
+      .social-links a {
+        color: white;
+        margin: 0 0.5rem;
+        font-size: 1.5rem;
         transition: color 0.3s;
       }
 
-      .footer-links a:hover {
-        color: #ff8c42;
+      .social-links a:hover {
+        color: var(--jam-accent);
       }
 
-      .footer-bottom {
+      .quickstart-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
         text-align: center;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(124, 58, 237, 0.2);
-        color: #6b7280;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
-      @media (max-width: 1024px) {
-        h1 {
-          font-size: 3.5rem;
-        }
+      .quickstart-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
 
-        .tagline {
-          font-size: 1.2rem;
-        }
+      .quickstart-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #000;
+      }
 
-        nav,
-        .features-section,
-        .playground-section,
-        .comparison-section,
-        .quickstart-section,
-        footer {
-          padding-left: 3rem;
-          padding-right: 3rem;
-        }
+      .quickstart-card h3 {
+        color: var(--jam-primary-dark);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
 
-        .playground-content {
-          grid-template-columns: 1fr;
-        }
+      .quickstart-card p {
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
 
-        .editor-pane {
-          border-right: none;
-          border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-        }
+      .code-block-wrapper {
+        position: relative;
+        margin-top: 1rem;
+      }
 
-        .footer-content {
-          grid-template-columns: 1fr 1fr;
+      .code-block-wrapper .code-block {
+        background: #f9fafb;
+        border-left: 2px solid var(--jam-accent);
+        padding: 1rem;
+        margin: 0;
+        font-size: 0.8rem;
+      }
+
+      .code-block-wrapper pre {
+        background: none;
+        color: #2d2d2d;
+        padding: 0;
+        border-radius: 0;
+        margin: 0;
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #000;
+        transition:
+          color 0.2s,
+          transform 0.2s;
+        padding: 0;
+      }
+
+      .copy-btn:hover {
+        color: var(--jam-accent);
+        transform: scale(1.1);
+      }
+
+      .copy-btn.copied {
+        color: #10b981;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 
       @media (max-width: 768px) {
-        h1 {
+        .hero h1 {
           font-size: 2.5rem;
         }
 
-        .tagline {
-          font-size: 1rem;
+        .hero p {
+          font-size: 1.1rem;
         }
 
-        nav {
-          padding: 1.5rem 2rem;
-          flex-direction: column;
-          gap: 1.5rem;
+        .container {
+          padding: 2rem 1rem;
         }
 
         .nav-links {
-          gap: 1.5rem;
-          font-size: 0.9rem;
-          flex-wrap: wrap;
+          margin-top: 1rem;
           justify-content: center;
-        }
-
-        .features-section,
-        .playground-section,
-        .comparison-section,
-        .quickstart-section,
-        footer {
-          padding-left: 2rem;
-          padding-right: 2rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .table-row {
-          grid-template-columns: 1fr;
-          gap: 0.5rem;
-        }
-
-        .footer-content {
-          grid-template-columns: 1fr;
         }
       }
     </style>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Jam Programming Language",
-        "url": "https://jam-lang.dev/",
-        "applicationCategory": "Programming Language",
-        "operatingSystem": "Windows, macOS, Linux",
-        "creator": {
-          "@type": "Person",
-          "name": "UnitaryIron"
-        },
-        "description": "Jam is a beginner-friendly, expressive programming language with readable, English-like syntax that compiles to JavaScript.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      }
-    </script>
   </head>
   <body>
-    <header>
-      <nav aria-label="Main Navigation">
-        <div class="logo-container">
-          <div class="logo-circle" aria-label="Jam Logo">J</div>
-          <span class="logo-text">Jam</span>
+    <nav class="nav-bar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#">
+            <img
+              src="content/Jam.png"
+              alt="Jam Logo"
+              style="height: 24px; vertical-align: middle; margin-right: 8px"
+            />
+            Jam
+          </a>
         </div>
         <div class="nav-links">
-          <a href="#features" title="Jam Features">Features</a>
-          <a href="#examples" title="Jam Examples">Examples</a>
-          <a href="#quickstart" title="Jam Quick Start">Quick Start</a>
-          <a
-            href="https://jam-ide.vercel.app/"
-            class="try-ide-btn"
-            title="Try Jam IDE"
-            >Try IDE</a
+          <a href="#features">Features</a>
+          <a href="#docs">Docs</a>
+          <a href="https://github.com/UnitaryIron/Jam-backend/releases/download/v2.0.0/Jam_Setup_v2.0.0.exe">Download</a>
+          <a href="#community">Community</a>
+          <a href="#news">News</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Jam</h1>
+        <p>
+          A beginner-friendly programming language designed to make coding feel
+          natural.<br />
+          Less syntax. More thinking.
+        </p>
+        <div class="cta-buttons">
+          <a href="#getting-started" class="btn btn-primary">Get Started →</a>
+          <a href="https://jam-ide.vercel.app/" class="btn btn-secondary"
+            >Try Online</a
           >
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero" aria-labelledby="main-title">
-        <div class="hero-content">
-          <div class="badges" aria-label="Jam Highlights">
-            <span class="badge">Beginner-friendly</span>
-            <span class="badge">Powerful</span>
-            <span class="badge">Open Source</span>
-          </div>
-
-          <h1 id="main-title">
-            A Friendly,
-            <span class="highlight">Expressive</span> Language<br />for All
-            Developers
-          </h1>
-
-          <p class="tagline">
-            Jam is a beginner-friendly programming language with readable,
-            English-like syntax that compiles to JavaScript.
-          </p>
-
-          <div class="cta-buttons">
-            <a
-              href="https://jam-ide.vercel.app/"
-              class="btn btn-primary"
-              title="Try Jam IDE"
-              >Try Jam IDE</a
-            >
-            <a
-              href="#quickstart"
-              class="btn btn-secondary"
-              title="Get Started with Jam"
-              >Get Started</a
-            >
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              class="btn btn-secondary"
-              title="Jam on GitHub"
-              >GitHub</a
-            >
-          </div>
-
-          <div class="code-preview" aria-label="Jam Example Code">
-            <div class="code-header">
-              <span class="code-title"># Welcome to Jam!</span>
-              <span class="code-lang">main.jam</span>
-            </div>
-            <pre class="code-content">
-<span class="code-line"><span class="code-keyword">say</span> <span class="code-string">"Hello, World!"</span></span>
-<span class="code-line"></span>
-<span class="code-line"><span class="code-keyword">set</span> name = <span class="code-string">"Developer"</span></span>
-<span class="code-line"><span class="code-keyword">add</span> <span class="code-string">"Hello, "</span> <span class="code-keyword">and</span> name <span class="code-keyword">into</span> greeting</span>
-<span class="code-line"><span class="code-function">print</span> greeting</span>
-            </pre>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats-section" aria-label="Jam Stats">
-        <div class="stat">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">JavaScript Compatible</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">1</div>
-          <div class="stat-label">Developer</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Contributors</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">Open Source</div>
-          <div class="stat-label">And Free</div>
-        </div>
-      </section>
-
-      <section
-        id="features"
-        class="features-section"
-        aria-labelledby="features-title"
-      >
-        <h2 class="section-title" id="features-title">
-          Powerful & Easy to Use
-        </h2>
-        <p class="section-subtitle">
-          A language designed to make programming accessible without sacrificing
-          power or flexibility.
-        </p>
-
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i
-                class="fas fa-lightbulb"
-                aria-hidden="true"
-                title="Intuitive Syntax"
-              ></i>
-            </div>
-            <h3 class="feature-title">Intuitive Syntax</h3>
-            <p class="feature-desc">
-              English-like commands that make sense right away. No complex
-              symbols or obscure syntax.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i
-                class="fas fa-code"
-                aria-hidden="true"
-                title="JavaScript Compilation"
-              ></i>
-            </div>
-            <h3 class="feature-title">JavaScript Compilation</h3>
-            <p class="feature-desc">
-              Convert Jam into clean, production-ready JavaScript with a single
-              command.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i
-                class="fas fa-comments"
-                aria-hidden="true"
-                title="Interactive Feedback"
-              ></i>
-            </div>
-            <h3 class="feature-title">Interactive Feedback</h3>
-            <p class="feature-desc">
-              Built-in interpreter for immediate results. Get warnings and tips
-              as you learn.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i
-                class="fas fa-rocket"
-                aria-hidden="true"
-                title="Modern Features"
-              ></i>
-            </div>
-            <h3 class="feature-title">Modern Features</h3>
-            <p class="feature-desc">
-              Functions, lambdas, maps, timers, and more. Everything you need
-              for real projects.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i
-                class="fas fa-cube"
-                aria-hidden="true"
-                title="Type Inference"
-              ></i>
-            </div>
-            <h3 class="feature-title">Type Inference</h3>
-            <p class="feature-desc">
-              Smart type detection and warning system to catch errors before
-              they happen.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i
-                class="fas fa-graduation-cap"
-                aria-hidden="true"
-                title="Beginner Friendly"
-              ></i>
-            </div>
-            <h3 class="feature-title">Beginner Friendly</h3>
-            <p class="feature-desc">
-              Designed for newcomers but powerful enough for professionals.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="comparison-section" aria-labelledby="comparison-title">
-        <h2 class="section-title" id="comparison-title">Why Jam Stands Out</h2>
-        <p class="section-subtitle">
-          Compare Jam's readable syntax with other languages
-        </p>
-
-        <div class="comparison-table" aria-label="Jam Comparison Table">
-          <div class="table-row table-header">
-            <div class="table-cell">Feature</div>
-            <div class="table-cell">Jam</div>
-            <div class="table-cell">Others</div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">English-like syntax</div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-            <div class="table-cell">
-              <span class="crossmark" aria-label="No">✗</span>
-            </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Beginner friendly</div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-            <div class="table-cell">
-              <span class="crossmark" aria-label="No">✗</span>
-            </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Compiles to JavaScript</div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-            <div class="table-cell">
-              <span class="crossmark" aria-label="No">✗</span>
-            </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Type inference</div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Modern features</div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-          </div>
-          <div class="table-row">
-            <div class="table-cell">Easy to read</div>
-            <div class="table-cell">
-              <span class="checkmark" aria-label="Yes">✓</span>
-            </div>
-            <div class="table-cell">
-              <span class="crossmark" aria-label="No">✗</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="quickstart"
-        class="quickstart-section"
-        aria-labelledby="quickstart-title"
-      >
-        <h2 class="section-title" id="quickstart-title">Quick Start</h2>
-        <p class="section-subtitle">Get up and running with Jam in minutes</p>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Clone the Repository</h3>
-            <div class="step-content">
-              git clone https://github.com/UnitaryIron/Jam-Backend.git<br />
-              cd Jam-Backend
-            </div>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3 class="step-title">Install Dependencies</h3>
-            <div class="step-content">pip install -r requirements.txt</div>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Create Your First Program</h3>
-            <div class="step-content">
-              # Create hello.jam<br />
-              say "Hello, World!"<br />
-              set name = "Developer"<br />
-              print name
-            </div>
-          </div>
-
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <h3 class="step-title">Run or Compile</h3>
-            <div class="step-content">
-              # Run directly<br />
-              python jam.py hello.jam<br />
-              # Or compile to JavaScript<br />
-              python jam.py --compile hello.jam > hello.js<br />
-              node hello.js
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem">
           <a
             href="https://github.com/UnitaryIron/Jam-Backend"
-            class="btn btn-primary"
-            title="View Jam Documentation"
-            >View Documentation</a
+            class="btn btn-secondary"
+            >GitHub →</a
+          >
+          <a
+            href="https://github.com/UnitaryIron/Jam-backend/releases/download/v2.0.0/Jam_Setup_v2.0.0.exe"
+            class="btn btn-secondary"
+            >Download →</a
           >
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <div class="footer-logo-circle" aria-label="Jam Logo">J</div>
-            <span class="logo-text">Jam</span>
-          </div>
-          <p class="footer-desc">
-            A friendly, expressive programming language for all developers.
+    <div class="container" id="features">
+      <div class="section-header">
+        <h2>Why Jam?</h2>
+        <p>Designed for humans first. Especially beginners</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-pen"></i></div>
+          <h3>Readable</h3>
+          <p>
+            Code that reads like plain English. Understand programs at a glance.
           </p>
         </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Simple</h3>
+          <p>
+            Built for beginners. No confusing syntax, just clear logic you can
+            follow.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-wrench"></i></div>
+          <h3>Modern</h3>
+          <p>
+            Powerful features without overwhelming you. Learn step by step, grow
+            naturally.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>Smart</h3>
+          <p>
+            Helps you avoid mistakes and focus on understanding, not memorizing
+            rules.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-gift"></i></div>
+          <h3>Free</h3>
+          <p>Open for everyone. Learn, build, and explore without limits.</p>
+        </div>
+      </div>
+    </div>
 
-        <div class="footer-section">
-          <h3>Resources</h3>
-          <div class="footer-links">
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Jam Documentation"
-              >Documentation</a
+    <div class="container" id="download">
+      <div class="section-header">
+        <h2>Quick Start</h2>
+        <p>Start coding in minutes, even if it’s your first time</p>
+      </div>
+      <div class="features-grid">
+        <div class="quickstart-card">
+          <div>
+            <div class="quickstart-icon"><i class="fas fa-clone"></i></div>
+            <h3>Clone Repository</h3>
+            <p>Get the latest Jam source code from GitHub.</p>
+          </div>
+          <div class="code-block-wrapper">
+            <button
+              class="copy-btn"
+              onclick="copyToClipboard(this)"
+              title="Copy to clipboard"
             >
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Report Issues"
-              >Report Issues</a
-            >
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Contributing to Jam"
-              >Contributing</a
-            >
+              <i class="fas fa-copy"></i>
+            </button>
+            <div class="code-block">
+              <pre><code>git clone https://github.com/UnitaryIron/Jam-Backend.git
+cd Jam-Backend</code></pre>
+            </div>
           </div>
         </div>
-
-        <div class="footer-section">
-          <h3>Community</h3>
-          <div class="footer-links">
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Jam GitHub"
-              >GitHub</a
+        <div class="quickstart-card">
+          <div>
+            <div class="quickstart-icon"><i class="fas fa-download"></i></div>
+            <h3>Install Dependencies</h3>
+            <p>Set up all required packages for Jam.</p>
+          </div>
+          <div class="code-block-wrapper">
+            <button
+              class="copy-btn"
+              onclick="copyToClipboard(this)"
+              title="Copy to clipboard"
             >
-            <a href="#" title="Jam Discussions">Discussions</a>
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Jam Examples"
-              >Examples</a
-            >
+              <i class="fas fa-copy"></i>
+            </button>
+            <div class="code-block">
+              <pre><code>pip install -r requirements.txt</code></pre>
+            </div>
           </div>
         </div>
-
-        <div class="footer-section">
-          <h3>Support</h3>
-          <div class="footer-links">
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Star Jam on GitHub"
-              >Star on GitHub</a
+        <div class="quickstart-card">
+          <div>
+            <div class="quickstart-icon"><i class="fas fa-play"></i></div>
+            <h3>Run Your First Program</h3>
+            <p>Execute a simple Jam program to test your setup.</p>
+          </div>
+          <div class="code-block-wrapper">
+            <button
+              class="copy-btn"
+              onclick="copyToClipboard(this)"
+              title="Copy to clipboard"
             >
-            <a
-              href="https://github.com/UnitaryIron/Jam-Backend"
-              title="Follow Jam Updates"
-              >Follow Updates</a
-            >
-            <a href="#" title="Spread the Word about Jam">Spread the Word</a>
+              <i class="fas fa-copy"></i>
+            </button>
+            <div class="code-block">
+              <pre><code>python jam.py examples/hello.jam</code></pre>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="footer-bottom">
-        <p>MIT License © 2025 Jam Programming Language</p>
+    <div class="container" id="community">
+      <div class="two-column">
+        <div>
+          <h2 style="color: var(--jam-primary-dark); margin-bottom: 1rem">
+            Join the Community
+          </h2>
+          <p style="margin-bottom: 1rem">
+            Jam is growing fast! Connect with other developers, contribute to
+            the language, and help shape a simpler way to learn and build with
+            code.
+          </p>
+          <ul style="margin-left: 1.5rem; color: #666">
+            <li><i class="fas fa-github"></i> GitHub: Star and contribute</li>
+            <li>
+              <i class="fas fa-comments"></i> Discord: Real-time chat & support
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="code-block">
+            <pre><code># Another example of Jam code to show how it looks in practice
+
+# String concatenation
+set first = "Hello"
+set last = "World"
+add first and " " into temp
+add temp and last into greeting
+print greeting</code></pre>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="container" id="news">
+      <div class="section-header">
+        <h2>Latest News</h2>
+        <p>Stay updated with Jam development</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><i class="fas fa-gift"></i> Jam v2.0.0 Released</h3>
+          <p style="color: #666; font-size: 0.9rem">December 31, 2025</p>
+          <p>
+            First release with comprehensive error handling and sunsetting of
+            compiler to JavaScript.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fas fa-code"></i> Jam IDE made in Monaco</h3>
+          <p style="color: #666; font-size: 0.9rem">July 27, 2025</p>
+          <p>
+            A modern, web-based integrated development environment for Jam,
+            built on the Monaco editor.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fas fa-lightbulb"></i> Creation of Jam Language</h3>
+          <p style="color: #666; font-size: 0.9rem">June 6, 2025</p>
+          <p>
+            The birth of a new programming language designed for simplicity and
+            learnability.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="social-links">
+        <a href="https://github.com/UnitaryIron/Jam-Backend"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://discord.gg/vBA7Egm6"><i class="fab fa-discord"></i></a>
+      </div>
+      <p><strong>Jam Language</strong> - Simple. Clear. Built for learners.</p>
+      <p>Open Source</p>
+      <p style="margin-top: 1rem; font-size: 0.9rem">
+        © 2025-2026 Jam Language Contributors
+      </p>
     </footer>
+
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.nextElementSibling;
+        const code = codeBlock.querySelector("code").textContent;
+
+        navigator.clipboard
+          .writeText(code)
+          .then(() => {
+            button.textContent = "Copied!";
+            button.classList.add("copied");
+
+            setTimeout(() => {
+              button.textContent = "Copy";
+              button.classList.remove("copied");
+            }, 2000);
+          })
+          .catch(() => {
+            alert("Failed to copy code");
+          });
+      }
+
+      function runJam() {
+        const code = document.getElementById("jamCode").value;
+        const outputDiv = document.getElementById("output");
+
+        outputDiv.innerHTML = "<strong>> Compiling Jam code...</strong><br>";
+
+        setTimeout(() => {
+          try {
+            let simulatedOutput = [];
+
+            const lines = code.split("\n");
+            for (let line of lines) {
+              if (
+                line.trim().startsWith("say ") ||
+                line.trim().startsWith("print ")
+              ) {
+                let content = line.match(/say\s+(.+)|print\s+(.+)/);
+                if (content) {
+                  let text = content[1] || content[2];
+                  text = text.replace(/["']/g, "");
+                  simulatedOutput.push(text);
+                }
+              }
+            }
+
+            if (simulatedOutput.length > 0) {
+              outputDiv.innerHTML +=
+                "<strong>✓ Output:</strong><br>" + simulatedOutput.join("<br>");
+            } else {
+              outputDiv.innerHTML +=
+                '<span style="color: var(--jam-accent);">✓ Code compiled successfully! (No output statements)</span>';
+            }
+
+            outputDiv.innerHTML +=
+              '<br><br><span style="color: #aaa; font-size: 0.8rem;">✓ Compiled to JavaScript successfully</span>';
+          } catch (error) {
+            outputDiv.innerHTML +=
+              '<span style="color: #ff6b6b;">✗ Compilation error: ' +
+              error.message +
+              "</span>";
+          }
+        }, 500);
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 
